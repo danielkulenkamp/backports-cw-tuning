@@ -12,7 +12,7 @@ all: $(BP)
 $(BP): $(BP).tar.gz
 	tar xzf $(BP).tar.gz
 	cd $(BP) && \
-	  patch -p1 < ../backports-wireless-v2.patch && \
+	  patch -p1 < ../backports-wireless-v3.patch && \
 	  echo "CPTCFG_ATH9K_STATION_STATISTICS=y" >> defconfigs/ath9k-debug && \
 	  echo "CPTCFG_MAC80211_DEBUG_COUNTERS=y"  >> defconfigs/ath9k-debug
 	make -C $(BP) defconfig-ath9k-debug
